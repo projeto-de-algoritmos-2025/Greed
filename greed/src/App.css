@@ -1,42 +1,125 @@
+/* ======================
+   RESET BÁSICO E LAYOUT
+   ====================== */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ======================
+   HEADER
+   ====================== */
+header {
+  background-color: #007bff;
+  color: white;
+  padding: 1.5rem 2rem;
   text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ======================
+   CONTEÚDO PRINCIPAL
+   ====================== */
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ======================
+   FORMULÁRIO
+   ====================== */
+.form-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
-.card {
-  padding: 2em;
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
 }
 
-.read-the-docs {
-  color: #888;
+.form-grid input,
+.form-grid button {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+/* ======================
+   BOTÕES
+   ====================== */
+button {
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.actions .schedule {
+  background-color: #28a745;
+}
+
+.actions .clear {
+  background-color: #dc3545;
+}
+
+/* ======================
+   LISTA DE TAREFAS
+   ====================== */
+.task-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.task-column {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.task-list {
+  max-height: 60vh;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
